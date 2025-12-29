@@ -1,146 +1,188 @@
-# Digital Marketing Campaign Performance Analysis (EDA)
+📊 Digital Marketing Campaign Analysis — Exploratory Data Analysis (EDA)
+Project Overview
 
-## Executive Summary
-This project presents an end-to-end **exploratory and diagnostic analysis** of digital marketing campaign data with the objective of evaluating **conversion efficiency, channel performance, and revenue impact**.
+This project presents an end-to-end Exploratory Data Analysis (EDA) of digital marketing campaigns to understand revenue performance, conversion behavior, and campaign effectiveness over a three-year period (2021–2023).
 
-The analysis emphasizes **data quality validation, metric definition, and business-driven insights**, mirroring how a Senior Data Analyst would approach real-world marketing and growth analytics problems.
+The analysis focuses on identifying drivers behind declining revenue trends, evaluating channel and campaign performance, and providing data-backed recommendations for sustainable revenue growth.
 
----
+All analysis was conducted using Python with a strong emphasis on clean data modeling, reproducibility, and business relevance.
 
-## Tools & Environment
-- **Language:** Python  
-- **Libraries:** pandas, numpy, matplotlib  
-- **Development Environment:** VS Code  
-- **Analysis Type:** Exploratory & Diagnostic Analytics  
+Business Questions & Key Findings
+1️⃣ What is the annual revenue trend?
 
----
+Finding:
+📉 Annual net revenue is declining year-on-year by ~0.8% from 2021 to 2023.
 
-## Data Sources & Structure
-├── raw_data_files/
-│ ├── campaigns.csv
-│ ├── customers.csv
-│ ├── events.csv
-│ ├── products.csv
-│ └── transactions.csv
+Visualization:
+![YoY Revenue Trend](charts/YoY Revenue Trend.png)
+
+
+2️⃣ Why is revenue declining?
+
+Key diagnostics revealed:
+
+✅ Transaction volume increased by ~1% in FY23 vs FY22
+
+❌ Revenue per transaction declined, driving overall revenue drop
+
+❌ Revenue declined across all acquisition channels except Organic
+
+Conclusion:
+The issue is not demand, but lower monetization efficiency per transaction.
+
+3️⃣ Channel Performance Analysis
+
+Highest conversion rates:
+
+Email: 17.7%
+
+Paid Search: 16.7%
+
+Overall conversion rate: 9.9%
+
+Direct and Organic conversion rates (~3.9%) are significantly below expectations
+
+Visualization:
+![Channel Wise Conversion Funnel](charts/channel wise conversion funnels.png)
+
+4️⃣ Campaign Effectiveness & Reusability
+
+Analysis of the top revenue-generating campaigns revealed:
+
+Only 1 out of the top 7 campaigns was repeated in 2023
+
+High-performing campaign archetypes were not consistently reused
+
+Campaign performance is highly repeatable, not one-off
+
+Recommendations for Revenue Growth
+🚀 Recommendation 1: Reuse High-Performing Campaigns
+
+Only Paid Search – Cross-sell – High Value was repeated among top performers
+
+Top campaigns should be:
+
+Re-run annually
+
+Even at shorter durations if needed
+
+📈 Impact Estimate:
+Assuming a conservative 50% uplift per repeated campaign, re-running top campaigns could add:
+
+₹700K+ incremental annual revenue
+
+~25% YoY revenue growth
+
+🚀 Recommendation 2: Scale High-Conversion Channels
+
+Shift incremental budget toward:
+
+Email
+
+Paid Search
+
+These channels outperform the overall average conversion by ~75%
+
+Action:
+Increase campaign volume and audience reach within these channels.
+
+Key Takeaways
+
+Revenue decline is driven by lower revenue per transaction, not fewer purchases
+
+Campaign reuse is a major untapped opportunity
+
+Email and Paid Search are the most efficient levers for growth
+
+Organic growth alone cannot offset monetization decline
+
+Next Steps / Future Enhancements
+
+Customer cohort analysis by acquisition channel
+
+Campaign ROI vs expected uplift validation
+
+A/B testing framework for campaign duration optimization
+
+Predictive modeling for campaign revenue forecasting
+
+Repository Structure
+Campaign_Analysis_EDA_Project/
 │
-├── EDA_code.ipynb
-├── README.md
+├── raw_data_files/
+│   ├── campaigns.csv
+│   ├── customers.csv
+│   ├── events.csv (large file - not uploaded to github)
+│   ├── products.csv
+│   └── transactions.csv
+│
+├── EDA_code/
+│   └── campaign_analysis_eda.ipynb
+│
+├── charts/
+│   ├── channel wise conversion funnels.png
+│   ├── customers by acquistion channel.png
+│   ├── customers by age.png
+│   ├── customers by country.png
+│   ├── customers by loyalty tier.png
+│   ├── monthly revenue pattern.png
+│   ├── number of campaigns by channel.png
+│   ├── number of campaigns by objective.png
+│   ├── number of campaigns by target segment.png
+│   ├── overall conversion funnel.png
+│   ├── product categories.png
+|   ├── YoY Revenue Trend.png
+│
+└── README.md
 
+Tools & Technologies
 
-### Dataset Overview
-- **Campaigns:** Channel, objective, target segment, campaign duration  
-- **Customers:** User identifiers and metadata  
-- **Events:** User interaction data used to construct funnels  
-- **Products:** Product catalog and pricing  
-- **Transactions:** Revenue, discounts, and refunds  
+Language: Python
 
----
+Libraries: pandas, numpy, matplotlib, plotly
 
-## Data Quality Assessment & Preparation
-A structured data validation process was conducted prior to analysis:
+Environment: VS Code, Jupyter Notebook
 
-### 1. Temporal Data Normalization
-- Timestamp and date fields were originally stored as strings
-- Converted all relevant columns to `datetime` to enable:
-  - Accurate time-series aggregation
-  - Campaign duration calculations
-  - Daily revenue normalization
+Techniques:
 
-### 2. Categorical Standardization
-- Identified inconsistent capitalization in `traffic_source`
-- Standardized values to ensure:
-  - Accurate aggregations
-  - Elimination of duplicate category inflation
-  - Reliable channel-level comparisons
+Data cleaning & feature engineering
 
-### 3. Revenue Metric Engineering
-- Transaction-level revenue required adjustment for:
-  - Discounts
-  - Refunded transactions
-- **Net revenue** was explicitly derived to reflect true business impact
+Aggregations & pivots
 
----
+Funnel analysis
 
-## Analytical Approach
-The EDA followed a structured framework:
+Time-series trend analysis
 
-1. **Univariate Analysis**
-   - Distribution of events, users, campaigns, and revenue
+Campaign-level performance evaluation
 
-2. **Funnel Construction**
-   - Event-level aggregation to assess drop-off and conversion efficiency
+Data Preparation & Cleaning
 
-3. **Channel Performance Evaluation**
-   - Conversion rate analysis by traffic source
-   - Benchmarking against expected marketing behavior
+Key preprocessing steps included:
 
-4. **Campaign Profitability Analysis**
-   - Net revenue aggregation at the campaign level
-   - Normalization by campaign duration (daily net revenue)
+Converting timestamp and date fields from object to datetime
 
----
+Standardizing categorical fields (e.g., traffic_source)
 
-## Business Questions & Insights
+Resolved inconsistencies such as EMAIL, Email, email
 
-### 1️⃣ Which Traffic Sources Drive the Highest Conversion?
+Deriving additional features:
 
-| Traffic Source | Conversion Rate |
-|----------------|------------------|
-| **Email** | **17.7%** |
-| Paid Search | 16.7% |
-| Social | 14.3% |
-| Direct | 3.9% |
-| Organic | 3.9% |
+year, month, year_month
 
-#### Insight
-- **Email consistently outperforms all other channels**, indicating strong intent alignment and targeting efficiency.
-- **Direct and Organic traffic materially underperform**, contradicting typical expectations and signaling potential issues in:
-  - Landing page experience
-  - Audience quality
+net_revenue (after discounts and refunds)
 
-#### Recommendation
-- Prioritize incremental investment in **Email and Paid Search**
-- Conduct deeper analysis on **Direct and Organic** traffic to identify friction points
+Ensuring transaction counts were net of refunds
 
----
+This ensured consistency and accuracy across all downstream analyses.
 
-### 2️⃣ Which Campaigns Generate the Highest Net Revenue Impact?
+Author Notes
 
-Net revenue was calculated after adjusting for discounts and refunds. Normalization was done by campaign duration for campaigns.
+This project is designed to reflect real-world business analytics workflows, with emphasis on:
 
-| Campaign ID | Channel | Objective | Target Segment | Campaign Period | Net Revenue | Daily Net Revenue |
-|------------|--------|-----------|----------------|----------------|------------|------------------|
-| 5 | Social | Acquisition | New Customers | 82 days | 191,588.20 | 2,336.44 |
-| 18 | Affiliate | Retention | All | 59 days | 191,126.03 | 3,239.42 |
-| 29 | Email | Acquisition | New Customers | 62 days | 186,213.14 | 3,003.44 |
-| 44 | Affiliate | Reactivation | All | 76 days | 183,494.01 | 2,414.39 |
-| 7 | Paid Search | Cross-sell | High Value | 39 days | 176,805.78 | 4,533.48 |
+Structured thinking
 
+Clear communication of insights
 
-#### Recommendation
-- Scale high-performing Paid Search and Email campaigns
-- Use daily net revenue as a primary metric for future campaign evaluation
+Quantified, actionable recommendations
 
----
-
-## Key Takeaways
-- Conversion rate alone is insufficient; **revenue efficiency provides stronger decision support**
-- Email remains the most reliable high-intent channel
-- Paid Search excels in monetization when targeted effectively
-- Data normalization materially impacts analytical accuracy
-
----
-
-## Limitations & Assumptions
-- Attribution modeled at the traffic source level (no multi-touch attribution)
-- Conversion defined using available event taxonomy
-- Revenue timing aligned to transaction timestamps
-
----
-
-## Author
-**Rahul Nanda**  
- Marketing & Growth Analytics | Aspiring Data Scientist  
-
-📌 *This project demonstrates applied analytics, business reasoning and metric-driven decision making suitable for senior-level roles.*
-
+Ideal for showcasing skills relevant to Senior Data Analyst / Marketing Analytics / Product Analytics roles.
