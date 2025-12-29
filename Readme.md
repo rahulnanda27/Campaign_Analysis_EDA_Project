@@ -107,6 +107,7 @@ A/B testing framework for campaign duration optimization
 Predictive modeling for campaign revenue forecasting
 
 Repository Structure
+```
 Campaign_Analysis_EDA_Project/
 │
 ├── raw_data_files/
@@ -133,8 +134,10 @@ Campaign_Analysis_EDA_Project/
 │   ├── product categories.png
 |   ├── YoY Revenue Trend.png
 │
-└── README.md
-
+├── README.md
+│
+└── Sumamry of analysis.xlsx
+```
 Tools & Technologies
 
 Language: Python
