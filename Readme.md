@@ -28,7 +28,7 @@ Key diagnostics revealed:
 
 ❌ Revenue declined across all acquisition channels except Organic
 
-# Conclusion:
+Conclusion:
 The issue is not demand, but lower monetization efficiency per transaction.
 
 3️⃣ Channel Performance Analysis
@@ -44,6 +44,7 @@ Overall conversion rate: 9.9%
 Direct and Organic conversion rates (~3.9%) are significantly below expectations
 
 Visualization:
+
 ![Channel Wise Conversion Funnel](charts/channel_wise_conversion_funnels.png)
 
 4️⃣ Campaign Effectiveness & Reusability
