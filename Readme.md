@@ -1,5 +1,6 @@
-📊 Digital Marketing Campaign Analysis — Exploratory Data Analysis (EDA)
-Project Overview
+# 📊Digital Marketing Campaign Analysis — Exploratory Data Analysis (EDA) using Python
+
+## Project Overview
 
 This project presents an end-to-end Exploratory Data Analysis (EDA) of digital marketing campaigns to understand revenue performance, conversion behavior, and campaign effectiveness over a three-year period (2021–2023).
 
@@ -7,14 +8,14 @@ The analysis focuses on identifying drivers behind declining revenue trends, eva
 
 All analysis was conducted using Python with a strong emphasis on clean data modeling, reproducibility, and business relevance.
 
-Business Questions & Key Findings
+# Business Questions & Key Findings
 1️⃣ What is the annual revenue trend?
 
 Finding:
 📉 Annual net revenue is declining year-on-year by ~0.8% from 2021 to 2023.
 
 Visualization:
-![YoY Revenue Trend](charts/YoY Revenue Trend.png)
+![YoY Revenue Trend](charts/yoy_revenue_trend.png)
 
 
 2️⃣ Why is revenue declining?
@@ -27,7 +28,7 @@ Key diagnostics revealed:
 
 ❌ Revenue declined across all acquisition channels except Organic
 
-Conclusion:
+# Conclusion:
 The issue is not demand, but lower monetization efficiency per transaction.
 
 3️⃣ Channel Performance Analysis
@@ -43,13 +44,13 @@ Overall conversion rate: 9.9%
 Direct and Organic conversion rates (~3.9%) are significantly below expectations
 
 Visualization:
-![Channel Wise Conversion Funnel](charts/channel wise conversion funnels.png)
+![Channel Wise Conversion Funnel](charts/channel_wise_conversion_funnels.png)
 
 4️⃣ Campaign Effectiveness & Reusability
 
 Analysis of the top revenue-generating campaigns revealed:
 
-Only 1 out of the top 7 campaigns was repeated in 2023
+Only 1 out of the top 7 previous campaigns was repeated in 2023
 
 High-performing campaign archetypes were not consistently reused
 
@@ -106,7 +107,7 @@ A/B testing framework for campaign duration optimization
 
 Predictive modeling for campaign revenue forecasting
 
-Repository Structure
+# Repository Structure
 ```
 Campaign_Analysis_EDA_Project/
 │
@@ -121,18 +122,18 @@ Campaign_Analysis_EDA_Project/
 │   └── campaign_analysis_eda.ipynb
 │
 ├── charts/
-│   ├── channel wise conversion funnels.png
-│   ├── customers by acquistion channel.png
-│   ├── customers by age.png
-│   ├── customers by country.png
-│   ├── customers by loyalty tier.png
-│   ├── monthly revenue pattern.png
-│   ├── number of campaigns by channel.png
-│   ├── number of campaigns by objective.png
-│   ├── number of campaigns by target segment.png
-│   ├── overall conversion funnel.png
-│   ├── product categories.png
-|   ├── YoY Revenue Trend.png
+│   ├── channel_wise_conversion_funnels.png
+│   ├── customers_by_acquistion_channel.png
+│   ├── customers_by_age.png
+│   ├── customers_by_country.png
+│   ├── customers_by_loyalty_tier.png
+│   ├── monthly_revenue_pattern.png
+│   ├── number_of_campaigns_by_channel.png
+│   ├── number_of_campaigns_by_objective.png
+│   ├── number_of_campaigns_by_target_segment.png
+│   ├── overall_conversion_funnel.png
+│   ├── product_categories.png
+|   ├── yoy_revenue_trend.png
 │
 ├── README.md
 │
@@ -178,7 +179,7 @@ Ensuring transaction counts were net of refunds
 
 This ensured consistency and accuracy across all downstream analyses.
 
-Author Notes
+# Author Notes
 
 This project is designed to reflect real-world business analytics workflows, with emphasis on:
 
