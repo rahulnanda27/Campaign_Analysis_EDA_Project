@@ -57,7 +57,7 @@ High-performing campaign archetypes were not consistently reused
 
 Campaign performance is highly repeatable, not one-off
 
-Recommendations for Revenue Growth
+# Recommendations for Revenue Growth
 🚀 Recommendation 1: Reuse High-Performing Campaigns
 
 Only Paid Search – Cross-sell – High Value was repeated among top performers
@@ -88,7 +88,7 @@ These channels outperform the overall average conversion by ~75%
 Action:
 Increase campaign volume and audience reach within these channels.
 
-Key Takeaways
+# Key Takeaways
 
 Revenue decline is driven by lower revenue per transaction, not fewer purchases
 
@@ -98,7 +98,7 @@ Email and Paid Search are the most efficient levers for growth
 
 Organic growth alone cannot offset monetization decline
 
-Next Steps / Future Enhancements
+# Next Steps / Future Enhancements
 
 Customer cohort analysis by acquisition channel
 
@@ -140,7 +140,7 @@ Campaign_Analysis_EDA_Project/
 │
 └── Sumamry of analysis.xlsx
 ```
-Tools & Technologies
+# Tools & Technologies
 
 Language: Python
 
@@ -148,7 +148,7 @@ Libraries: pandas, numpy, matplotlib, plotly
 
 Environment: VS Code, Jupyter Notebook
 
-Techniques:
+# Techniques:
 
 Data cleaning & feature engineering
 
@@ -162,7 +162,7 @@ Campaign-level performance evaluation
 
 Data Preparation & Cleaning
 
-Key preprocessing steps included:
+# Key preprocessing steps included:
 
 Converting timestamp and date fields from object to datetime
 
